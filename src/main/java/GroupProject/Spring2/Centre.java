@@ -38,7 +38,6 @@ public class Centre extends Plan{
 			Node newNode = Node(defaultNodes[position], null, null, parent);
 			
 			parent.addChild(newNode);
-			System.out.println("added a child ");
 			
 			parent = newNode;
 			position++;
