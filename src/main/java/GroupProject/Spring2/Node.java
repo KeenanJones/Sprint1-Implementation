@@ -85,6 +85,7 @@ public class Node {
 	//Adds a child to the given node
 	public void addChild(Node node) {
 		this.children[0] = node;
+		//This is a change
 		
 	}
 	
