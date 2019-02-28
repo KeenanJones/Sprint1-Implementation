@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 
 //This is the node class that holds the information of all of the nodes in the tree
-@SuppressWarnings("unused")
 public class Node {
 	String name;
 	String data;
-	Node children[];
+	ArrayList<Node> children;
 	Node parent;
+	Integer position;
 	
 	/**
 	 * @param name
@@ -17,14 +17,31 @@ public class Node {
 	 * @param children
 	 * @param parent
 	 */
-	public Node(String name, String data, Node[] children, Node parent) {
+	public Node(String name, String data, ArrayList<Node> children, Node parent, Integer position) {
 		super();
 		this.name = name;
 		this.data = data;
 		this.children = children;
 		this.parent = parent;
+		this.position = position;
 	}
 	
+
+	/**
+	 * @return the position
+	 */
+	public Integer getPosition() {
+		return position;
+	}
+
+
+	/**
+	 * @param position the position to set
+	 */
+	public void setPosition(Integer position) {
+		this.position = position;
+	}
+
 
 	/**
 	 * @return the name
@@ -57,15 +74,20 @@ public class Node {
 	/**
 	 * @return the children
 	 */
-	public Node[] getChildren() {
+	public ArrayList<Node> getChildren() {
 		return children;
 	}
 	
 	/**
 	 * @param children the children to set
 	 */
-	public void setChildren(Node[] children) {
+	public void setChildren(ArrayList<Node> children) {
 		this.children = children;
+	}
+	
+	public void setChildrenEmpty() {
+		ArrayList<Node> noChildren = new ArrayList<Node>();
+		this.children = noChildren;
 	}
 	
 	/**
@@ -83,15 +105,21 @@ public class Node {
 	}
 	
 	//Adds a child to the given node
-	public void addChild(Node node) {
-		this.children[0] = node;
-		//This is a change
+	public void addChild(Node parent, Node newNode) {
+		ArrayList<Node> newChildren = parent.getChildren();
+		newChildren.add(newNode);
+		parent.setChildren(newChildren);
+		
 		
 	}
+	
+
 	
 	//Removes a child and the rest branch
 	public void removeChild(Node node) {
 		
 	}
+
+
 
 }
