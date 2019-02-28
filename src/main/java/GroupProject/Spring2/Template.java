@@ -19,17 +19,43 @@ public class Template {
 	String templates[];
 	
 	
+	public static Plan getPlan(String plan) {
+		
+		
+		if(plan == "Centre") {
+			Plan newPlan = new Centre();
+			return newPlan;
+		}
+		else if(plan == "VMOSA") {
+			Plan newPlan = new VMOSA();
+			return newPlan;
+		}
+		else if(plan == "IowaState") {
+			Plan newPlan = new IowaState();
+			return newPlan;
+		}
+		else {
+			System.out.println("This plan is not currently available.");
+			return null;
+		}
+		
+		
+		
+		
+	}
+	
 	
 	public static void main(String[] args) {
-		Plan test = new Centre();		
+		Plan newestPlan = getPlan("Centre");
 		
-		ArrayList<String> defaultNodesToPass = test.getDefaultNodesToPass();
-		test.addNode(test.getPointer().getChildren().get(1), defaultNodesToPass);
 		
-		test.removeNode(test.getPointer().getChildren().get(2));
+		ArrayList<String> defaultNodesToPass = newestPlan.getDefaultNodesToPass();
+		newestPlan.addNode(newestPlan.getPointer().getChildren().get(1), defaultNodesToPass);
 		
-		test.getPointer().setData("Hallie is cute... like reallyyyy cute. Like she should probably kiss me right now");
-		System.out.println(test.getPointer().getData());
+		newestPlan.removeNode(newestPlan.getPointer().getChildren().get(2));
+		
+		newestPlan.getPointer().setData("This is some new data, beleive it or not");
+		System.out.println(newestPlan.getPointer().getData());
 		
 		
 		

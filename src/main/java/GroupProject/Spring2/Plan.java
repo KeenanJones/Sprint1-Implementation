@@ -29,6 +29,7 @@ public abstract class Plan {
 		for(int i=position; i<defaultNodesToPass.size(); i++) {
 			Node nodeMade = new Node(defaultNodesToPass.get(i), null, noChildren, parent, i);
 			
+			System.out.println("Made a "+ defaultNodesToPass.get(i));
 			
 			parent.addChild(parent, nodeMade);
 			parent = nodeMade;
