@@ -3,6 +3,7 @@ package GroupProject.Spring2;
 import java.util.ArrayList;
 
 public class Centre extends Plan{
+	//Sets a string array of all the parts of its business plan
 	String defaultNodes[] = {"Mission", "Goals", "Objectives", "Assessment Process", "Results"};
 	Integer defaultLimits[] = {1, 15, 15, 15, 15};
 	String planName = "Centre";
@@ -38,6 +39,7 @@ public class Centre extends Plan{
 		return pointer;
 	}
 
+	//makes an array list of the default nodes for passing purposes
 	public ArrayList<String> getDefaultNodesToPass(){
 		ArrayList<String> defaultNodesToPass = new ArrayList<String>();
 		

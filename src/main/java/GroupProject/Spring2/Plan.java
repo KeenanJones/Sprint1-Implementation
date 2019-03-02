@@ -7,7 +7,6 @@ public abstract class Plan {
 	Node pointer;
 	
 	
-	//Constructor
 	public Plan() {
 		
 	}
@@ -18,6 +17,7 @@ public abstract class Plan {
 		
 		for(int i=0; i<defaultN.length; i++) {
 			Defaults node = new Defaults(defaultN[i], defaultL[i], planN, i);
+			
 			Objects.add(node);
 		}
 		return Objects;
@@ -28,8 +28,6 @@ public abstract class Plan {
 	public void buildChildren(Node parent, ArrayList<Node> noChildren, ArrayList<String> defaultNodesToPass, Integer position) {
 		for(int i=position; i<defaultNodesToPass.size(); i++) {
 			Node nodeMade = new Node(defaultNodesToPass.get(i), null, noChildren, parent, i);
-			
-			System.out.println("Made a "+ defaultNodesToPass.get(i));
 			
 			parent.addChild(parent, nodeMade);
 			parent = nodeMade;
@@ -63,11 +61,12 @@ public abstract class Plan {
 		node.setData(data);
 	}
 	
-	//gets the point
+	//This gets the pointer to the root of the tree
 	public Node getPointer() {
 		return pointer;
 	}
 
+	//This gets the list of default nodes for passing purposes
 	public ArrayList<String> getDefaultNodesToPass() {
 		// TODO Auto-generated method stub
 		return getDefaultNodesToPass();

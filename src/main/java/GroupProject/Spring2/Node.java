@@ -115,10 +115,7 @@ public class Node {
 	
 
 	
-	//Removes a child and the rest branch
-	public void removeChild(Node node) {
-		
-	}
+
 
 
 
